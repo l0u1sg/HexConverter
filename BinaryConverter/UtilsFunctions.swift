@@ -7,22 +7,25 @@
 
 import Foundation
 
-extension BinaryInteger {
-    var binaryDescription: String {
-        /// Convert a given number to it's binary representation
-        /// source: https://stackoverflow.com/questions/26181221/how-to-convert-a-decimal-number-to-binary-in-swift
-        var binaryString = ""
-        var internalNumber = self
-        var counter = 0
-        
-        for _ in (1...self.bitWidth) {
-            binaryString.insert(contentsOf: "\(internalNumber & 1)", at: binaryString.startIndex)
-            internalNumber >>= 1
-            counter += 1
-            if counter % 4 == 0 {
-                binaryString.insert(contentsOf: " ", at: binaryString.startIndex)
-            }
-        }
-        return binaryString
+/// Convert a given number to its binary form
+/// - Parameter decimalString: Your number in base10 in String format
+/// - Returns: Return the number in base2 in String format or return "Invalid Input" if the input is not valid
+func convertToBinary(_ decimalString: String) -> String {
+    if let decimal = Int(decimalString) {
+        return String(decimal, radix: 2)
+    } else {
+        return "Invalid Input"
+    }
+}
+
+/// Convert a given number to its hexadeciam form
+/// - Parameter decimalString: Your number in base10 in String format
+/// - Returns: Return the number in base16 in String format or return "Invalid Input" if the input is not valid
+func convertToHex(_ decimalString: String) -> String {
+    if let number = Int(decimalString) {
+        let hexString = String(number, radix: 16)
+        return hexString.uppercased()
+    } else {
+        return "Invalid Input"
     }
 }

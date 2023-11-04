@@ -20,25 +20,8 @@ struct BinaryConverter: View {
                 Text("Your number in base 2: \(binaryNumber)")
             }
         }
-//        .onChange(of: decimalNumber) {
-//            [decimalNumber] newValue in
-//            if newValue != decimalNumber {
-//                binaryNumber = convertToBinary(newValue)
-//            }
-//        }
-        .onChange(of: decimalNumber, initial: true, {
-            oldDecimalNumber, NewDecimalNumber in
-            if (oldDecimalNumber != NewDecimalNumber) {
-                binaryNumber = convertToBinary(NewDecimalNumber)
-            }
-        })
-    }
-    func convertToBinary(_ decimalString: String) -> String {
-        if let decimal = Int(decimalString) {
-            // Perform your base conversion logic here
-            return String(decimal, radix: 2)
-        } else {
-            return "Invalid Input"
+        .onChange(of: decimalNumber) { newValue in
+            binaryNumber = convertToBinary(newValue)
         }
     }
 }
