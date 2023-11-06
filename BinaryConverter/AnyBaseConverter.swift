@@ -1,0 +1,48 @@
+//
+//  AnyBaseConverter.swift
+//  BinaryConverter
+//
+//  Created by Louis Gallet on 06/11/2023.
+//
+
+import SwiftUI
+
+struct AnyBaseConverter: View {
+    @State private var sourceBasedNumber: String = ""
+    @State private var basedNumber: String = ""
+    @State private var destinationBasedNumber: String = ""
+    @State private var resultConversion: String = ""
+    var body: some View {
+        Form {
+            Section(header: Text("Source base")) {
+                TextField("Enter the source base for the number", text: $sourceBasedNumber)
+                    .keyboardType(.numberPad)
+            }
+            Section(header: Text("Number to convert")) {
+                TextField("Enter the number that you want to convert",
+                          text: $basedNumber)
+                .keyboardType(.numberPad)
+            }
+            Section(header: Text("Destination base")) {
+                TextField("Enter the arrival base",
+                          text: $destinationBasedNumber)
+                .keyboardType(.numberPad)
+            }
+            Section(header: Text("Result")) {
+                Text("Your number in base \(destinationBasedNumber): \(resultConversion)")
+            }
+            Button("Dismiss Keyboard") {
+                UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+            }
+        }
+        .onChange(of: $basedNumber, $sourceBasedNumber) { newValue in resultConversion = convertFromAnyBaseToAnyBase(basedNumber, fromBase: Int(sourceBasedNumber)!, toBase: Int(destinationBasedNumber))!}
+//        .onChange(of: $sourceBasedNumber) { newValue in
+//            $destinationBasedNumber = convertToHex(newValue)
+//        }
+
+    }
+}
+
+#Preview {
+    AnyBaseConverter()
+}
