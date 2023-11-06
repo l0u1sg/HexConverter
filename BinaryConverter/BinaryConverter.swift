@@ -19,6 +19,9 @@ struct BinaryConverter: View {
             Section(header: Text("Base 2")) {
                 Text("Your number in base 2: \(binaryNumber)")
             }
+            Button("Dismiss Keyboard") {
+                UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+            }
         }
         .onChange(of: decimalNumber) { newValue in
             binaryNumber = convertToBinary(newValue)

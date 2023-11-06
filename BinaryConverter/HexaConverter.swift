@@ -16,14 +16,19 @@ struct HexaConverter: View {
                 TextField("Enter the base 10 number here", text: $decimalNumber)
                     .keyboardType(.numberPad)
             }
-            Section(header: Text("Base 2")) {
+            Section(header: Text("Base 16")) {
                 Text("Your number in base 16: \(HexadecimalNumber)")
+            }
+            Button("Dismiss Keyboard") {
+                UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
             }
         }
         .onChange(of: decimalNumber) { newValue in
-            HexadecimalNumber = convertToBinary(newValue)
+            HexadecimalNumber = convertToHex(newValue)
         }
+
     }
+    
 }
 
 #Preview {
