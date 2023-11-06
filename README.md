@@ -10,4 +10,5 @@ A simple hex converter for converting decimal to binary/hexadecimal and other ba
 </div>
 
 ## Download
-https://apps.apple.com/fr/app/hexconverter/id6471345416
+https://apps.apple.com/fr/app/hexconverter/id6471345416 (stable)
+https://testflight.apple.com/join/X3Uk1Lb9 (TestFlight)
