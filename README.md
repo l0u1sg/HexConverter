@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="./resources/logo/logo.png" height=auto width=50%/>
+  <img src="./resources/logo/logo.png" height=auto width=15%/>
   <h1><center>Binary Converter</center></h1>
 </p>
 A simple hex converter for converting decimal to binary/hexadecimal and other base
