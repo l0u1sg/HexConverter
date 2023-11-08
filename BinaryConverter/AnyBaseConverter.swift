@@ -32,6 +32,14 @@ struct AnyBaseConverter: View {
 
             Section(header: Text("Result")) {
                 Text("Your number in base \(destinationBasedNumber): \(resultConversion)")
+                    .contextMenu(ContextMenu(menuItems: {
+                        Button(action: {
+                            let pasteboard = UIPasteboard.general
+                            pasteboard.string = resultConversion
+                        }, label: {
+                            Label("Copy value", systemImage: "doc.on.doc")
+                        })
+                    }))
             }
             Button("Dismiss Keyboard") {
                 UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
