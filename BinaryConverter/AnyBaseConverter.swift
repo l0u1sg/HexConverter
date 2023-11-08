@@ -18,16 +18,18 @@ struct AnyBaseConverter: View {
                 TextField("Enter the source base for the number", text: $sourceBasedNumber)
                     .keyboardType(.numberPad)
             }
-            Section(header: Text("Number to convert")) {
-                TextField("Enter the number that you want to convert",
-                          text: $basedNumber)
-                .keyboardType(.numberPad)
-            }
             Section(header: Text("Destination base")) {
                 TextField("Enter the arrival base",
                           text: $destinationBasedNumber)
                 .keyboardType(.numberPad)
             }
+            
+            Section(header: Text("Number to convert")) {
+                TextField("Enter the number that you want to convert",
+                          text: $basedNumber)
+                .keyboardType(.numberPad)
+            }
+
             Section(header: Text("Result")) {
                 Text("Your number in base \(destinationBasedNumber): \(resultConversion)")
             }
@@ -35,10 +37,12 @@ struct AnyBaseConverter: View {
                 UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
             }
         }
-        .onChange(of: $basedNumber, $sourceBasedNumber) { newValue in resultConversion = convertFromAnyBaseToAnyBase(basedNumber, fromBase: Int(sourceBasedNumber)!, toBase: Int(destinationBasedNumber))!}
-//        .onChange(of: $sourceBasedNumber) { newValue in
-//            $destinationBasedNumber = convertToHex(newValue)
-//        }
+        .onChange(of: basedNumber) { newValue in
+            if (!(destinationBasedNumber == "" || sourceBasedNumber == "")) {
+                resultConversion = convertFromAnyBaseToAnyBase(basedNumber, fromBase: Int(sourceBasedNumber)!, toBase: Int(destinationBasedNumber) ?? 0)
+            }
+
+        }
 
     }
 }
