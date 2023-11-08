@@ -15,6 +15,7 @@
 		2CCE3EAD2AF67A9000BB0ED3 /* UtilsFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CCE3EAC2AF67A9000BB0ED3 /* UtilsFunctions.swift */; };
 		2CCE3EB12AF67CFD00BB0ED3 /* HexaConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CCE3EB02AF67CFD00BB0ED3 /* HexaConverter.swift */; };
 		2CEC5C712AFBF09800A6DEB3 /* BinaryConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CEC5C702AFBF09800A6DEB3 /* BinaryConverter.swift */; };
+		2CEC5C752AFBF5BB00A6DEB3 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 2CEC5C742AFBF5BB00A6DEB3 /* Localizable.xcstrings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		2CCE3EAC2AF67A9000BB0ED3 /* UtilsFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilsFunctions.swift; sourceTree = "<group>"; };
 		2CCE3EB02AF67CFD00BB0ED3 /* HexaConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HexaConverter.swift; sourceTree = "<group>"; };
 		2CEC5C702AFBF09800A6DEB3 /* BinaryConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BinaryConverter.swift; sourceTree = "<group>"; };
+		2CEC5C742AFBF5BB00A6DEB3 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +67,7 @@
 				2CEC5C702AFBF09800A6DEB3 /* BinaryConverter.swift */,
 				2C53DAA52AF866B200EB233F /* AnyBaseConverter.swift */,
 				2CCE3EAC2AF67A9000BB0ED3 /* UtilsFunctions.swift */,
+				2CEC5C742AFBF5BB00A6DEB3 /* Localizable.xcstrings */,
 				2CCE3EA22AF678B300BB0ED3 /* Assets.xcassets */,
 				2CCE3EA42AF678B300BB0ED3 /* Preview Content */,
 			);
@@ -121,6 +124,7 @@
 			knownRegions = (
 				en,
 				Base,
+				fr,
 			);
 			mainGroup = 2CCE3E922AF678B200BB0ED3;
 			productRefGroup = 2CCE3E9C2AF678B200BB0ED3 /* Products */;
@@ -139,6 +143,7 @@
 			files = (
 				2CCE3EA62AF678B300BB0ED3 /* Preview Assets.xcassets in Resources */,
 				2CCE3EA32AF678B300BB0ED3 /* Assets.xcassets in Resources */,
+				2CEC5C752AFBF5BB00A6DEB3 /* Localizable.xcstrings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

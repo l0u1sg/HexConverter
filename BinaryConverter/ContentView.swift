@@ -12,8 +12,8 @@ struct ContentView: View {
     var body: some View {
         TabView(selection: $selectedTab,
                 content:  {
-            BinaryConverter().tabItem { Image(systemName: "2.square.fill") ; Text("Binary") }.tag(0)
-            HexaConverter().tabItem { Image(systemName: "16.square.fill") ; Text("Hexa") }.tag(1)
+            BinaryConverter().tabItem { Image(systemName: "2.square.fill") ; Text("menu.conversion.binary") }.tag(0)
+            HexaConverter().tabItem { Image(systemName: "16.square.fill") ; Text("menu.conversion.hexa") }.tag(1)
             AnyBaseConverter().tabItem { Image(systemName: "number.square.fill") ; Text("Any base") }.tag(2)
             
         })
