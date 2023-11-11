@@ -18,6 +18,15 @@ struct HexaConverter: View {
             }
             Section(header: Text("Base 16")) {
                 Text("Your number in base 16: \(HexadecimalNumber)")
+                    .contextMenu(ContextMenu(menuItems: {
+                        Button(action: {
+                            let pasteboard = UIPasteboard.general
+                            pasteboard.string = HexadecimalNumber
+                            
+                        }, label: {
+                            Label("Copy value", systemImage: "doc.on.doc")
+                        })
+                    }))
             }
             Button("Dismiss Keyboard") {
                 UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)

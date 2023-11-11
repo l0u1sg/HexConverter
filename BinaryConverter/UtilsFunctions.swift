@@ -29,3 +29,17 @@ func convertToHex(_ decimalString: String) -> String {
         return "Invalid Input"
     }
 }
+
+/// Converts a number from the source base to the destination base
+/// - Parameters:
+///   - decimalString: The number that you want to convert
+///   - fromBase: The base of the number that you want to convert
+///   - toBase: The destination base
+/// - Returns: Return the number in toBase base or return "Invalid Input" if the input is not valid
+func convertFromAnyBaseToAnyBase(_ decimalString: String, fromBase: Int, toBase: Int) -> String {
+    if let number = Int(decimalString, radix: fromBase) {
+        return String(number, radix: toBase)
+    } else {
+        return "Invalid Input"
+    }
+}
